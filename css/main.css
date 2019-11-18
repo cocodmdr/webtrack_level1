@@ -1,0 +1,89 @@
+
+body{
+  background-color: lightgrey;
+}
+h1{
+  /*text-align: center;*/
+  /*text-decoration:underline;*/
+  font-size: 3em;  
+  margin-bottom: 0em;
+}
+h2{
+  color: blue;
+  text-transform: uppercase;
+}
+
+h3{
+  margin-bottom: 0em;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  grid-gap: 1em;
+
+  max-width: 55em;
+  background-color: white;
+  /*border: 0.1em solid red;*/
+  padding: 1em 1em;
+  margin: 1em auto;
+}
+
+.item {
+  border: 0.08em solid blue;
+  /* vertical | horizontal */
+  padding: 0em 1em;
+}
+
+.content{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  /*border: 0.1em solid black;*/
+}
+
+.date{
+  font-style: italic;
+  color: blue;
+  /*border: 0.1em solid red;*/
+
+}
+
+.description{
+  /*border: 1px solid red;*/
+  /* haut | droit | bas | gauche */
+  padding: 0em 0em 0em 1em;
+  text-align: justify;
+}
+
+#header {
+  grid-column: 1 / -1;
+  /*There’s this sneaky -1 value that you’ll use frequently to span the full grid container, and it’s all because your grid is one more than the number of columns/rows defined; it really has to do with tracks. This track officially ends at the end of your grid container.*/
+  /*This example starts at the first column and spans the full width of the defined grid regardless the number of columns defined in your CSS. Cool right? Heck yeah it is!*/
+}
+
+#contact {
+  grid-column: 1 / -1;
+  /*There’s this sneaky -1 value that you’ll use frequently to span the full grid container, and it’s all because your grid is one more than the number of columns/rows defined; it really has to do with tracks. This track officially ends at the end of your grid container.*/
+  /*This example starts at the first column and spans the full width of the defined grid regardless the number of columns defined in your CSS. Cool right? Heck yeah it is!*/
+}
+
+@media all and (max-device-width: 768px){
+  /*this allow us to change parameters for smaller devices like mobile phone*/
+  /*changes for screens smaller than 480px*/
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+  .description{
+  /*border: 1px solid red;*/
+  /* haut | droit | bas | gauche */
+  padding: 0em 0em 0em 0em;  
+  margin-top: 0em;
+  }
+  .date{
+    margin-bottom: 0em;
+  }
+  .content{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
